@@ -1,0 +1,76 @@
+.product-detail-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.favorite-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-btn:hover {
+    border-color: #ff4757;
+    transform: scale(1.1);
+}
+
+.favorite-btn.active {
+    background: #ff4757;
+    border-color: #ff4757;
+}
+
+/*rating & review */
+.review-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.review-user {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.review-rating {
+    margin-bottom: 8px;
+    font-size: 14px; /* Kích thước sao */
+}
+
+.review-rating i {
+    margin-right: 2px;
+}
+
+.review-comment {
+    color: #555;
+    line-height: 1.5;
+}
+
+.no-review {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+}

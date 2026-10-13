@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La.Douceur - Tiệm bánh healthy: không thêm đường, ngũ cốc nguyên cám, bột yến mạch và hạnh nhân">
+    <title>La.Douceur - Bánh healthy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-banner">
+        <p>🌾 Bánh healthy, không thêm đường | Miễn phí vận chuyển cho đơn từ 150.000đ | Đặt hàng: 0387 198 273</p>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logoLa.png" alt="La.Douceur Logo">
+                        <div class="brand-name">La.Douceur</div>
+                    </a>
+                </div>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="category.html">Bánh healthy</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="aboutus.html">Giới thiệu</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Tìm tên bánh...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <a href="login.html" class="account-btn">👤</a>
+                    <a href="cart.html" class="cart-btn">🛒 <span class="cart-count">0</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb container">
+        <a href="index.html">Trang chủ</a> &gt; <span>Giỏ hàng</span>
+    </div>
+
+    <section class="container">
+        <h1 class="section-title">Giỏ Hàng</h1>
+        
+        <div class="cart-content">
+            <div class="cart-items">
+                <div class="cart-header">
+                    <div class="cart-col product">Sản phẩm</div>
+                    <div class="cart-col price">Đơn giá</div>
+                    <div class="cart-col quantity">Số lượng</div>
+                    <div class="cart-col total">Thành tiền</div>
+                    <div class="cart-col action">Thao tác</div>
+                </div>
+                
+                <div id="cart-list-container">
+                    </div>
+                
+                <div class="cart-actions">
+                    <a href="category.html" class="btn btn-outline continue-shopping">← Tiếp tục mua hàng</a>
+                    <button class="btn btn-outline clear-cart" onclick="clearCart()">Xóa giỏ hàng</button>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-card">
+                    <h3 class="summary-title">Tổng đơn hàng</h3>
+                    
+                    <div class="summary-row">
+                        <span>Tạm tính:</span>
+                        <span class="subtotal" id="summary-subtotal">0đ</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Phí vận chuyển:</span>
+                        <span class="shipping-fee" id="summary-shipping">30.000đ</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Giảm giá:</span>
+                        <span class="discount" id="summary-discount">0đ</span>
+                    </div>
+                    
+                    <div class="summary-row total-row">
+                        <span>Tổng cộng:</span>
+                        <span class="grand-total" id="summary-total">0đ</span>
+                    </div>
+                    
+                    <div class="shipping-notice" id="shipping-notice" style="display:none">
+                        <p>🎉 Bạn đã đủ điều kiện miễn phí vận chuyển!</p>
+                    </div>
+                    
+                    <button class="btn btn-primary checkout-btn">Tiến hành thanh toán</button>
+                </div>
+            </div>
+        </div>
+        
+        <section class="suggested-products">
+            <h2 class="section-title">Có thể bạn sẽ thích</h2>
+            <div class="product-grid" id="suggested-products-container">
+                </div>
+        </section>
+    </section>
+
+    <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">💬</span>
+        <span class="material-symbols-outlined">❌</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Trợ lý La.Douceur</h2>
+            <span class="close-btn material-symbols-outlined">❌</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Xin chào 👋<br>Chào mừng bạn đến với La.Douceur. Tôi có thể giúp gì cho bạn hôm nay?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Nhập câu hỏi..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Về La.Douceur</h3>
+                    <p>La.Douceur là tiệm bánh healthy tại Hà Nội: không thêm đường tinh luyện, dùng ngũ cốc nguyên cám và bột thay thế như yến mạch, hạnh nhân. Good Food, Better You.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2xl" style="color: #74C0FC;"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="category.html">Sản phẩm</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="aboutus.html">Giới thiệu</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Chính sách bảo mật & <br>Điều khoản sử dụng</a></li>
+                        <li><a href="shipping-policy.html">Chính sách vận chuyển</a></li>
+                        <li><a href="return-policy.html">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <ul>
+                        <li>📍 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
+                        <li>📞 0387 198 273</li>
+                        <li>✉️ info@La.Douceur.vn</li>
+                        <li>🕒 8:00 - 21:00 hàng ngày</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 La.Douceur</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/news.js"></script> 
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

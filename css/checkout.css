@@ -1,0 +1,130 @@
+.checkout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Form bên trái */
+.checkout-form-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary); 
+    outline: none;
+}
+
+textarea.form-control {
+    resize: vertical;
+    height: 100px;
+}
+
+.order-summary-section {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    height: fit-content;
+}
+
+.order-summary-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.order-divider {
+    border-top: 1px dashed #ccc;
+    margin: 20px 0;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.order-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d62828;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn-confirm {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn-confirm:hover {
+    background-color: #d4a373;
+}
+
+#success-message {
+    display: none; 
+    text-align: center;
+    padding: 50px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#success-message h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+#success-message i {
+    font-size: 60px;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+    }
+}

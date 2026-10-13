@@ -1,0 +1,213 @@
+.section-return,
+.section-shipping {
+    position: relative;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Đặt hình ảnh riêng biệt */
+.section-return {
+    background-image: url('/images/frame.jpg');
+}
+
+.section-shipping {
+    background-image: url('/images/Login.jpg');
+}
+
+/* Overlay & Tiêu đề */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 40px 60px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* privacy-policy  */
+/* Khung chia layout 2 cột (privacy-policy) */
+.privacy-tabs {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 30px 0 40px;
+}
+
+/* Sidebar trái */
+.privacy-nav {
+    flex: 0 0 280px;
+    max-width: 350px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Nội dung bên phải */
+.privacy-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+/* Responsive: Chuyển sang 1 cột trên mobile */
+@media (max-width: 768px) {
+    .privacy-tabs {
+        flex-direction: column;
+    }
+
+    .privacy-nav,
+    .privacy-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .privacy-nav {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+}
+/* Tiêu đề sidebar */
+.privacy-nav h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Thanh ngang sau tiêu đề */
+.privacy-nav .nav-divider {
+    border: none;
+    border-top: 2px solid #d9534f;
+    margin: 0 0 20px;
+}
+
+/* Khung viền bao quanh danh mục */
+.privacy-nav .nav-box {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+/* Danh sách không dấu chấm */
+.privacy-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mục danh sách và liên kết */
+.privacy-nav ul li {
+    margin-bottom: 10px;
+}
+
+.privacy-nav ul li a {
+    text-decoration: none;
+    color: #555;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.privacy-nav ul li a:hover {
+    color: #d9534f;
+    text-decoration: underline;
+    transform: translateX(4px);
+}
+/* Khung chứa slider */
+.privacy-nav .privacy-slider {
+    margin-top: 40px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track chạy ngang */
+.privacy-nav .slider-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-privacy 25s linear infinite;
+}
+
+/* Ảnh trong slider */
+.privacy-nav .slider-track img {
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    box-shadow:0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: transform 0.3s ease;
+}
+
+.privacy-nav .slider-track img:hover {
+    transform: scale(1.05);
+}
+
+/* Animation chạy ngang */
+@keyframes scroll-privacy {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive: ảnh nhỏ hơn trên mobile */
+@media (max-width: 768px) {
+    .privacy-nav .slider-track img {
+        width: 150px;
+        height: 100px;
+    }
+}
+/* Tiêu đề nội dung */
+.privacy-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #d9534f;
+}
+
+/* Đoạn văn và tiêu đề phụ */
+.privacy-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.privacy-section strong {
+    display: block;
+    margin: 20px 0 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+.content-section {
+    background-color: #ffffff;
+    color: #222222;
+    padding: 40px 60px;
+    line-height: 1.8;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: justify;
+    margin: 0 3px;
+}
+
+.content-section p {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - La.Douceur</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-banner">
+        <p>🌾 Bánh healthy, không thêm đường | Miễn phí vận chuyển cho đơn từ 150.000đ | Đặt hàng: 0387 198 273</p>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logoLa.png" alt="La.Douceur Logo">
+                        <div class="brand-name">La.Douceur</div>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="category.html">Bánh healthy</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="aboutus.html">Giới thiệu</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Tìm tên bánh...">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <a href="login.html" class="account-btn">👤</a>
+                    <a href="cart.html" class="cart-btn">🛒 <span class="cart-count">2</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb container">
+        <a href="index.html">Trang chủ</a> &gt; <a href="cart.html">Giỏ hàng</a> &gt; <span>Thanh toán</span>
+    </div>
+
+    <section class="container">
+        <h1 class="section-title">Thông tin thanh toán</h1>
+
+        <div id="success-message">
+            <i class="fa-regular fa-circle-check"></i>
+            <h2>Đặt hàng thành công!</h2>
+            <p>Cảm ơn bạn đã mua hàng tại La.Douceur.</p>
+            <p>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất để xác nhận đơn hàng.</p>
+            <br>
+            <a href="index.html" class="btn btn-outline">Về trang chủ</a>
+        </div>
+
+        <div class="checkout-container" id="checkout-main-area">
+            
+            <div class="checkout-form-section">
+                <h3>Thông tin giao hàng</h3>
+                <br>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="fullname">Họ và tên <span style="color:red">*</span></label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Nhập họ tên của bạn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Gmail <span style="color:red">*</span></label>
+                        <input type="email" id="email" class="form-control" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại <span style="color:red">*</span></label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Nhập số điện thoại" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ nhận hàng <span style="color:red">*</span></label>
+                        <input type="text" id="address" class="form-control" placeholder="Số nhà, đường, phường, quận..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note">Ghi chú đơn hàng</label>
+                        <textarea id="note" class="form-control" placeholder="Ví dụ: Giao hàng giờ hành chính, gọi trước khi giao..."></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="order-summary-section">
+                <div class="order-summary-title">Đơn hàng của bạn</div>
+                
+                <div id="order-items-list"></div>
+
+                <div class="order-divider"></div>
+
+                <div class="order-row">
+                    <span>Tạm tính:</span>
+                    <span id="checkout-subtotal">0đ</span>
+                </div>
+
+                <div class="order-row">
+                    <span>Phí vận chuyển:</span>
+                    <span id="checkout-shipping">...</span>
+                </div>
+
+                <div class="order-row">
+                    <span>Giảm giá:</span>
+                    <span id="checkout-discount">0đ</span>
+                </div>
+
+                <div class="order-divider"></div>
+
+                <div class="order-total">
+                    <span>Tổng cộng:</span>
+                    <span id="checkout-total">0đ</span>
+                </div>
+
+                <button type="button" class="btn-confirm" onclick="processPayment()">XÁC NHẬN THANH TOÁN</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Về La.Douceur</h3>
+                    <p>La.Douceur là tiệm bánh healthy tại Hà Nội: không thêm đường tinh luyện, dùng ngũ cốc nguyên cám và bột thay thế như yến mạch, hạnh nhân. Good Food, Better You.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2xl" style="color: #74C0FC;"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram fa-2xl" style="color: #ffffff;"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="category.html">Sản phẩm</a></li>
+                        <li><a href="news.html">Tin tức</a></li>
+                        <li><a href="aboutus.html">Giới thiệu</a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Chính sách bảo mật & <br>Điều khoản sử dụng</a></li>
+                        <li><a href="shipping-policy.html">Chính sách vận chuyển</a></li>
+                        <li><a href="return-policy.html">Chính sách đổi trả</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <ul>
+                        <li>📍 12 Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
+                        <li>📞 0387 198 273</li>
+                        <li>✉️ info@La.Douceur.vn</li>
+                        <li>🕒 8:00 - 21:00 hàng ngày</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 La.Douceur</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
