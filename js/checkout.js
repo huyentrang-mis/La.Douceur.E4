@@ -34,7 +34,7 @@ function loadOrderSummary() {
         const itemHTML = `
             <div class="order-item">
                 <span style="flex: 2;">${product.name} <small>(x${quantity})</small></span>
-                <span style="flex: 1; text-align: right;">${itemTotal.toLocaleString('vi-VN')}đ</span>
+                <span style="flex: 1; text-align: right;">${itemTotal.toLocaleString('vi-VN')} VND</span>
             </div>
         `;
         orderItemsContainer.innerHTML += itemHTML;
@@ -52,29 +52,29 @@ function loadOrderSummary() {
 
     const grandTotal = subtotal + shippingFee - discount;
 
-    if (elSubtotal) elSubtotal.innerText = subtotal.toLocaleString('vi-VN') + 'đ';
+    if (elSubtotal) elSubtotal.innerText = subtotal.toLocaleString('vi-VN') + ' VND';
     
     if (elShipping) {
         if (shippingFee === 0) {
             elShipping.innerText = "Miễn phí";
             elShipping.style.color = "green";
         } else {
-            elShipping.innerText = shippingFee.toLocaleString('vi-VN') + 'đ';
+            elShipping.innerText = shippingFee.toLocaleString('vi-VN') + ' VND';
             elShipping.style.color = "#333";
         }
     }
 
     if (elDiscount) {
         if (discount > 0) {
-            elDiscount.innerText = `-${discount.toLocaleString('vi-VN')}đ`;
+            elDiscount.innerText = `-${discount.toLocaleString('vi-VN')} VND`;
             elDiscount.style.color = "red";
         } else {
-            elDiscount.innerText = "0đ";
+            elDiscount.innerText = "0 VND";
             elDiscount.style.color = "#333";
         }
     }
 
-    if (elTotal) elTotal.innerText = (grandTotal > 0 ? grandTotal : 0).toLocaleString('vi-VN') + 'đ';
+    if (elTotal) elTotal.innerText = (grandTotal > 0 ? grandTotal : 0).toLocaleString('vi-VN') + ' VND';
 }
 
 // Handle payment processing

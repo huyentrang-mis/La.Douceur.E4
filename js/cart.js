@@ -57,6 +57,7 @@ function renderCart() {
         subtotal += itemTotal;
 
         const html = `
+        <div class="cart-item-wrapper">
             <div class="cart-item" data-id="${item.id}">
                 <div class="cart-col product">
                     <div class="product-info">
@@ -74,7 +75,7 @@ function renderCart() {
                 </div>
                 <div class="cart-col quantity">
                     <div class="quantity-controls">
-                        <button class="qty-btn minus" onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <button class="qty-btn minus" onclick="updateQuantity(${item.id}, -1)">−</button>
                         <input type="number" class="qty-input" value="${item.quantity}" min="1" readonly>
                         <button class="qty-btn plus" onclick="updateQuantity(${item.id}, 1)">+</button>
                     </div>
@@ -83,9 +84,12 @@ function renderCart() {
                     <span class="item-total">${formatCurrency(itemTotal)}</span>
                 </div>
                 <div class="cart-col action">
-                    <button class="remove-btn" onclick="removeItem(${item.id})">🗑️</button>
+                    <button class="remove-btn" onclick="removeItem(${item.id})" title="Xóa sản phẩm">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
                 </div>
             </div>
+        </div>
         `;
         cartContainer.innerHTML += html;
     });

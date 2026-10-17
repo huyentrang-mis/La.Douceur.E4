@@ -1,5 +1,5 @@
 function formatCurrency(amount) {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+    return new Intl.NumberFormat('vi-VN').format(amount) + ' VND';
 }
 
 function createProductCard(product, isNew = false) {

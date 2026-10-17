@@ -94,7 +94,9 @@ img {
     position: sticky;          /* Header dính trên cùng khi cuộn */
     top: 0;                   /* Dính ở vị trí top: 0 */
     z-index: 1000;            /* Luôn nằm trên các phần tử khác */
+    background-color: rgba(255, 255, 255, 0.95); /* Nền trắng gần đục */
     backdrop-filter: blur(10px); /* Hiệu ứng làm mờ background phía sau */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ khi sticky */
 }
 
 .header-main {
